@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Academy</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../frontend/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-1">
+        <a href="#" class="logo">
+          <i class="fas fa-laptop-code"></i> Tech<span>Academy</span>
+        </a>
+
+        <form action="" class="search-form">
+          <input
+            type="search"
+            name=""
+            placeholder="Search for courses..."
+            id="search-box"
+          />
+          <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="icons">
+          <div id="search-btn" class="fas fa-search"></div>
+          <a href="#" class="fas fa-heart"></a>
+          <a href="#" class="fas fa-cart"></a>
+          <div id="account-btn" class="fas fa-user"></div>
+        </div>
+      </div>
+
+      <div class="header-2">
+        <nav class="navbar">
+          <a href="#home">Home</a>
+          <a href="#courses">Courses</a>
+          <a href="#instructors">Instructors</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contacts">Contact Us</a>
+        </nav>
+      </div>
+    </header>
+
+    <nav class="bottom-navbar">
+      <a href="#home" class="fas fa-home"></a>
+      <a href="#courses" class="fas fa-book"></a>
+      <a href="#instructors" class="fas fa-chalkboard-teacher"></a>
+      <a href="#reviews" class="fas fa-comments"></a>
+      <a href="#contacts" class="fas fa-envelope"></a>
+    </nav>
+
+    <div class="account-form-container">
+      <div id="close-account-btn" class="fas fa-times"></div>
+      <form action="">
+        <h3>Sign In</h3>
+        <span>Email</span>
+        <input
+          type="email"
+          name=""
+          class="box"
+          placeholder="Enter your email"
+          id=""
+        />
+        <span>Password</span>
+        <input
+          type="password"
+          name=""
+          class="box"
+          placeholder="Enter your password"
+          id=""
+        />
+        <div class="checkbox">
+          <input type="checkbox" name="" id="remember" />
+          <label for="remember"> Remember me</label>
+        </div>
+        <input type="submit" value="Sign In" class="btn" />
+        <p>Forgot your password? <a href="#">Click here</a></p>
+        <p>Don't have an account? <a href="#">Create an account</a></p>
+      </form>
+    </div>
+
+    <section class="home" id="home">
+      <div class="row">
+        <div class="content">
+          <h3>Learn New Skills Today</h3>
+          <p>
+            Join our community and gain access to a wide variety of online
+            courses taught by industry experts.
+          </p>
+          <a href="#" class="btn">Browse Courses</a>
+        </div>
+        <div class="swiper courses-slider">
+          <div class="swiper-wrapper">
+            <a href="#" class="swiper-slide"
+              ><img src="../images/course-1.jpg" alt="Course 1"
+            /></a>
+            <a href="#" class="swiper-slide"
+              ><img src="../images/course-2.jpg" alt="Course 2"
+            /></a>
+            <a href="#" class="swiper-slide"
+              ><img src="../images/course-3.jpg" alt="Course 3"
+            /></a>
+            <a href="#" class="swiper-slide"
+              ><img src="../images/course-4.jpg" alt="Course 4"
+            /></a>
+            <a href="#" class="swiper-slide"
+              ><img src="../images/course-5.jpg" alt="Course 5"
+            /></a>
+            <a href="#" class="swiper-slide"
+              ><img src="../images/course-6.jpg" alt="Course 6"
+            /></a>
+          </div>
+          <img src="../images/stand.jpg" class="shelf" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="featured" id="courses">
+      <h1 class="heading"><span>Featured Courses</span></h1>
+      <div class="swiper featured-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+              <img src="../images/course-1.jpg" alt="" />
+            </div>
+            <div class="content">
+              <h3>Web Development Bootcamp</h3>
+              <div class="price">199.99/- to <span>249.99/-</span></div>
+              <a href="#" class="btn">Enroll Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+              <img src="../images/course-2.jpg" alt="" />
+            </div>
+            <div class="content">
+              <h3>Frontend web development course</h3>
+              <div class="price">1109.99/- to <span>2149.99/-</span></div>
+              <a href="#" class="btn">Enroll Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+              <img src="../images/course-3.jpg" alt="" />
+            </div>
+            <div class="content">
+              <h3>HTML,CSS Basic Learning</h3>
+              <div class="price">209.99/- to <span>349.99/-</span></div>
+              <a href="#" class="btn">Enroll Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+              <img src="../images/course-4.jpg" alt="" />
+            </div>
+            <div class="content">
+              <h3>Javascript,php,sql course</h3>
+              <div class="price">209.99/- to <span>349.99/-</span></div>
+              <a href="#" class="btn">Enroll Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+              <img src="../images/course-5.jpg" alt="" />
+            </div>
+            <div class="content">
+              <h3>Principles of IT</h3>
+              <div class="price">409.99/- to <span>549.99/-</span></div>
+              <a href="#" class="btn">Enroll Now</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="image">
+              <img src="../images/course-6.jpg" alt="" />
+            </div>
+            <div class="content">
+              <h3>Basics of IT</h3>
+              <div class="price">209.99/- to <span>349.99/-</span></div>
+              <a href="#" class="btn">Enroll Now</a>
+            </div>
+          </div>
+
+          <!-- Repeat for other courses -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <section class="informative">
+      <form action="">
+        <h3>Subscribe for Course Updates</h3>
+        <input
+          type="email"
+          name=""
+          placeholder="Enter your email"
+          id=""
+          class="box"
+        />
+        <input type="submit" value="Subscribe" class="btn" />
+      </form>
+    </section>
+
+    <section class="articles" id="reviews">
+      <h1 class="heading"><span>Student Reviews</span></h1>
+      <div class="swiper reviews-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <div class="image">
+              <img src="../images/student-1.jpg" alt="Student 1" />
+            </div>
+            <div class="content">
+              <h3>Excellent Learning Experience!</h3>
+              <p>
+                "This course was incredibly detailed and well-organized. The
+                instructors were knowledgeable and engaging."
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class=" "></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="image">
+              <img src="../images/student-2.jpg" alt="Student 1" />
+            </div>
+            <div class="content">
+              <h3>Great Learning Experience!</h3>
+              <p>"This course was incredibly detailed and well-organized."</p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="image">
+              <img src="../images/student-3.jpg" alt="Student 1" />
+            </div>
+            <div class="content">
+              <h3>Excellent!</h3>
+              <p>"The instructors were knowledgeable and engaging."</p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Repeat for other reviews -->
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <section class="offer">
+      <div class="content">
+        <h3>Special Offer</h3>
+        <h1>50% Off on All Courses</h1>
+        <p>
+          Enroll now and take advantage of our limited-time discount on all
+          online courses.
+        </p>
+        <a href="#" class="btn">Enroll Today</a>
+      </div>
+      <div class="image">
+        <img src="../images/offer-img.jpg" alt="Offer Image" />
+      </div>
+    </section>
+
+    <section class="instructors" id="instructors">
+      <h1 class="heading"><span>Meet Our Instructors</span></h1>
+      <div class="swiper instructors-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <div class="image">
+              <img src="../images/instructor-1.jpg" alt="Instructor 1" />
+            </div>
+            <div class="content">
+              <h3>John Doe</h3>
+              <p>Expert in Web Development</p>
+              <a href="#" class="btn">View Profile</a>
+            </div>
+          </div>
+          <!-- Repeat for other instructors -->
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+      <h1 class="heading"><span>Contact Us</span></h1>
+      <div class="row">
+        <div class="info">
+          <div class="icons-container">
+            <div class="icons">
+              <i class="fas fa-map"></i>
+              <h3>Location</h3>
+              <p>Bangalore, Karnataka, India</p>
+            </div>
+            <div class="icons">
+              <i class="fas fa-envelope"></i>
+              <h3>Email:</h3>
+              <p>support@techacademy.com</p>
+            </div>
+            <div class="icons">
+              <i class="fas fa-phone"></i>
+              <h3>Phone:</h3>
+              <p>+91 123 456 7890</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contacts-site">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-youtube"></a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <a href="#" class="logo">
+          <i class="fas fa-laptop-code"></i> Tech<span>Academy</span>
+        </a>
+        <p>
+          Your journey to becoming a tech expert begins here. Join us and start
+          learning today!
+        </p>
+        <div class="footer-icons">
+          <a href="#" class="fab fa-facebook-f"></a>
+          <a href="#" class="fab fa-twitter"></a>
+          <a href="#" class="fab fa-instagram"></a>
+          <a href="#" class="fab fa-linkedin"></a>
+          <a href="#" class="fab fa-youtube"></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="../frontend/script.js"></script>
+  </body>
+</html>

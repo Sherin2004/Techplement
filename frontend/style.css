@@ -1,0 +1,457 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600&display=swap");
+
+:root {
+  --orange:#F45D38;
+  --dark-orange:#b63d1f
+  --black: #232830;
+  --light-color: #666;
+  --white: #fefab6;
+  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --border-hover: 0.1rem solid var(--black);
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+  transition: width none;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+}
+
+section {
+  padding: 5rem 9%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.heading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 0.01rem;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+}
+
+.heading span {
+  font-size: 3rem;
+  padding: 0.5rem 2rem;
+  color: var(--black);
+  background: var(--white);
+  border: var(--border);
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.9rem 3rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  background: var(--orange);
+  font-size: 1.7rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: var(--dark-orange);
+}
+
+.header .header-1 {
+  background: var(--white);
+  padding: 1.5rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .header-1 .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: var(--black);
+}
+
+.header .header-1 .logo i {
+  color: var(--orange);
+}
+
+.header .header-1 .busqueda-form {
+  width: 50rem;
+  height: 5rem;
+  border: var(--border);
+  overflow: hidden;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.header .header-1 .busqueda-form input {
+  background: var(--white);
+  font-size: 1.6rem;
+  padding: 0 1.2rem;
+  height: 100%;
+  width: 100%;
+  text-transform: none;
+  color: var(--black);
+}
+
+.header .header-1 .busqueda-form label {
+  font-size: 2.5rem;
+  padding-right: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.header .header-1 .busqueda-form label:hover {
+  color: var(--orange);
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a {
+  font-size: 2.5rem;
+  margin-left: 1.5rem;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover {
+  color: var(--orange);
+}
+
+#busqueda-btn {
+  display: none;
+}
+
+.header .header-2 {
+  background: var(--orange);
+}
+
+.header .header-2 .navbar {
+  text-align: center;
+}
+
+.header .header-2 .navbar a {
+  color: #fff;
+  display: inline-block;
+  padding: 1.2rem;
+  font-size: 1.7rem;
+}
+
+.header .header-2 .navbar a:hover {
+  background: var(--dark-orange);
+}
+
+.header .header-2.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.bottom-navbar {
+  text-align: center;
+  background: var(--orange);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: none;
+}
+
+.bottom-navbar a {
+  font-size: 2.5rem;
+  padding: 2rem;
+  color: #fff;
+}
+
+.bottom-navbar a:hover {
+  background: var(--dark-color);
+}
+
+.acceso-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 250, 182, 0.9);
+  position: fixed;
+  right: -105%;
+  top: 0;
+  z-index: 10000;
+  height: 100%;
+  width: 100%;
+}
+
+.acceso-form-container.active {
+  right: 0;
+}
+
+.acceso-form-container form {
+  background: var(--white);
+  border: var(--border);
+  width: 40rem;
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.5rem;
+  margin: 2rem;
+}
+
+.acceso-form-container form h3 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--black);
+  text-align: center;
+}
+
+.acceso-form-container form span {
+  display: block;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+
+.acceso-form-container form .box {
+  width: 100%;
+  margin: 0.7rem 0;
+  font-size: 1.6rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  padding: 1rem 1.2rem;
+  color: var(--black);
+  text-transform: none;
+}
+
+.acceso-form-container form .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 0;
+}
+
+.acceso-form-container form .checkbox label {
+  font-size: 1.5rem;
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+.acceso-form-container form .btn {
+  text-align: center;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.acceso-form-container form p {
+  padding-top: 0.8rem;
+  color: var(--light-color);
+  font-size: 1.5rem;
+}
+
+.acceso-form-container form p a {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.acceso-form-container #close-acceso-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.5rem;
+  font-size: 5rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.acceso-form-container #close-acceso-btn:hover {
+  color: var(--orange);
+}
+
+.cargando-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  display: none;
+}
+
+.cargando-container.active {
+  display: flex;
+}
+
+.cargando-container img {
+  height: 10rem;
+}
+
+.libros .swiper-slide {
+  height: auto;
+  width: auto;
+}
+
+.libros .swiper-slide .libro {
+  padding: 2rem;
+  text-align: center;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  background: var(--white);
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.libros .swiper-slide .libro img {
+  height: 25rem;
+}
+
+.libros .swiper-slide .libro h3 {
+  font-size: 2rem;
+  color: var(--black);
+  padding: 0.5rem 0;
+}
+
+.libros .swiper-slide .libro .stars {
+  padding: 0.5rem 0;
+}
+
+.libros .swiper-slide .libro .stars i {
+  font-size: 1.7rem;
+  color: var(--orange);
+}
+
+.libros .swiper-slide .libro .price {
+  font-size: 2rem;
+  padding-top: 1rem;
+  color: var(--black);
+}
+
+.destacados .swiper-slide .libro {
+  height: auto;
+  padding: 2rem;
+  text-align: center;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  background: var(--white);
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.destacados .swiper-slide .libro img {
+  height: 15rem;
+}
+
+.destacados .swiper-slide .libro h3 {
+  font-size: 2rem;
+  color: var(--black);
+  padding: 0.5rem 0;
+}
+
+.destacados .swiper-slide .libro .stars {
+  padding: 0.5rem 0;
+}
+
+.destacados .swiper-slide .libro .stars i {
+  font-size: 1.7rem;
+  color: var(--orange);
+}
+
+.destacados .swiper-slide .libro .price {
+  font-size: 2rem;
+  padding-top: 1rem;
+  color: var(--black);
+}
+
+.articulos .swiper-slide .libro,
+.blogs .swiper-slide .libro {
+  height: auto;
+  padding: 2rem;
+  text-align: center;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  background: var(--white);
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.articulos .swiper-slide .libro img,
+.blogs .swiper-slide .libro img {
+  height: 15rem;
+}
+
+.articulos .swiper-slide .libro h3,
+.blogs .swiper-slide .libro h3 {
+  font-size: 2rem;
+  color: var(--black);
+  padding: 0.5rem 0;
+}
+
+.articulos .swiper-slide .libro .price,
+.blogs .swiper-slide .libro .price {
+  font-size: 2rem;
+  padding-top: 1rem;
+  color: var(--black);
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 3rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+  color: var(--black);
+}
+
+.footer .box-container .box a {
+  display: block;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  color: var(--light-color);
+}
+
+.footer .box-container .box a i {
+  padding-right: 0.5rem;
+  color: var(--orange);
+}
+
+.footer .box-container .box a:hover i {
+  padding-right: 2rem;
+}
+
+.footer .credit {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  font-size: 2rem;
+  color: var(--light-color);
+  border-top: var(--border);
+  text-align: center;
+}
