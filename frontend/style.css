@@ -1,14 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100;200;300;400;500;600&display=swap");
 
 :root {
-  --orange:#F45D38;
-  --dark-orange:#b63d1f
+  --orange: #f45d38;
+  --dark-orange: #b63d1f;
   --black: #232830;
   --light-color: #666;
   --white: #fefab6;
+  --background-gradient: linear-gradient(135deg, #fefab6 0%, #fbd786 100%);
   --border: 0.1rem solid rgba(0, 0, 0, 0.1);
   --border-hover: 0.1rem solid var(--black);
   --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+  --image-border-radius: 1rem;
+  --image-spacing: 2rem;
+  --image-scale: 1.08;
+  --image-shadow-hover: 0 1.5rem 3rem rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -20,8 +26,7 @@
   border: none;
   text-decoration: none;
   text-transform: capitalize;
-  transition: all 0.2s linear;
-  transition: width none;
+  transition: all var(--transition-speed) ease;
 }
 
 html {
@@ -32,7 +37,7 @@ html {
 }
 
 body {
-  background: var(--white);
+  background: var(--background-gradient);
 }
 
 section {
@@ -41,8 +46,12 @@ section {
 
 .heading {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   position: relative;
+  font-size: 4rem;
+  color: var(--black);
+  letter-spacing: 0.2rem;
+  text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.15);
 }
 
 .heading::before {
@@ -52,45 +61,52 @@ section {
   left: 0;
   transform: translateY(-50%);
   width: 100%;
-  height: 0.01rem;
+  height: 0.1rem;
   background: rgba(0, 0, 0, 0.1);
   z-index: -1;
 }
 
 .heading span {
-  font-size: 3rem;
-  padding: 0.5rem 2rem;
+  font-size: 3.5rem;
+  padding: 1rem 3rem;
   color: var(--black);
   background: var(--white);
   border: var(--border);
+  border-radius: 0.5rem;
+  display: inline-block;
 }
 
 .btn {
-  margin-top: 1rem;
+  margin-top: 2rem;
   display: inline-block;
-  padding: 0.9rem 3rem;
-  border-radius: 0.5rem;
+  padding: 1rem 4rem;
+  border-radius: 0.8rem;
   color: #fff;
   background: var(--orange);
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
+  box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.2);
+  transition: background var(--transition-speed),
+    box-shadow var(--transition-speed);
 }
 
 .btn:hover {
   background: var(--dark-orange);
+  box-shadow: 0 1.2rem 2rem rgba(0, 0, 0, 0.3);
 }
 
 .header .header-1 {
-  background: var(--white);
+  background: var(--background-gradient);
   padding: 1.5rem 9%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: var(--box-shadow);
 }
 
 .header .header-1 .logo {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bolder;
   color: var(--black);
 }
@@ -107,7 +123,7 @@ section {
   background: var(--white);
   display: flex;
   align-items: center;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
 }
 
 .header .header-1 .busqueda-form input {
@@ -137,19 +153,18 @@ section {
   margin-left: 1.5rem;
   color: var(--black);
   cursor: pointer;
+  transition: color var(--transition-speed), transform var(--transition-speed);
 }
 
 .header .header-1 .icons div:hover,
 .header .header-1 .icons a:hover {
   color: var(--orange);
-}
-
-#busqueda-btn {
-  display: none;
+  transform: scale(1.1);
 }
 
 .header .header-2 {
   background: var(--orange);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .header .header-2 .navbar {
@@ -161,10 +176,14 @@ section {
   display: inline-block;
   padding: 1.2rem;
   font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  transition: background var(--transition-speed),
+    transform var(--transition-speed);
 }
 
 .header .header-2 .navbar a:hover {
   background: var(--dark-orange);
+  transform: translateY(-0.3rem);
 }
 
 .header .header-2.active {
@@ -190,10 +209,13 @@ section {
   font-size: 2.5rem;
   padding: 2rem;
   color: #fff;
+  transition: background var(--transition-speed),
+    transform var(--transition-speed);
 }
 
 .bottom-navbar a:hover {
-  background: var(--dark-color);
+  background: var(--dark-orange);
+  transform: translateY(-0.3rem);
 }
 
 .acceso-form-container {
@@ -207,6 +229,7 @@ section {
   z-index: 10000;
   height: 100%;
   width: 100%;
+  transition: right var(--transition-speed);
 }
 
 .acceso-form-container.active {
@@ -219,8 +242,20 @@ section {
   width: 40rem;
   padding: 2rem;
   box-shadow: var(--box-shadow);
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
   margin: 2rem;
+  animation: form-pop 0.4s ease;
+}
+
+@keyframes form-pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .acceso-form-container form h3 {
@@ -284,174 +319,33 @@ section {
   font-size: 5rem;
   cursor: pointer;
   color: var(--black);
+  transition: color var(--transition-speed);
 }
 
 .acceso-form-container #close-acceso-btn:hover {
   color: var(--orange);
 }
 
-.cargando-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: #fff;
+.image-container {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--image-spacing);
   justify-content: center;
-  z-index: 10000;
-  display: none;
 }
 
-.cargando-container.active {
-  display: flex;
-}
-
-.cargando-container img {
-  height: 10rem;
-}
-
-.libros .swiper-slide {
-  height: auto;
-  width: auto;
-}
-
-.libros .swiper-slide .libro {
-  padding: 2rem;
-  text-align: center;
-  border: var(--border);
-  box-shadow: var(--box-shadow);
-  background: var(--white);
-  border-radius: 0.5rem;
+.image-container img {
   width: 100%;
-}
-
-.libros .swiper-slide .libro img {
-  height: 25rem;
-}
-
-.libros .swiper-slide .libro h3 {
-  font-size: 2rem;
-  color: var(--black);
-  padding: 0.5rem 0;
-}
-
-.libros .swiper-slide .libro .stars {
-  padding: 0.5rem 0;
-}
-
-.libros .swiper-slide .libro .stars i {
-  font-size: 1.7rem;
-  color: var(--orange);
-}
-
-.libros .swiper-slide .libro .price {
-  font-size: 2rem;
-  padding-top: 1rem;
-  color: var(--black);
-}
-
-.destacados .swiper-slide .libro {
-  height: auto;
-  padding: 2rem;
-  text-align: center;
-  border: var(--border);
+  max-width: 25rem;
+  border-radius: var(--image-border-radius);
   box-shadow: var(--box-shadow);
-  background: var(--white);
-  border-radius: 0.5rem;
-  width: 100%;
+  cursor: pointer;
+  transition: transform var(--transition-speed),
+    box-shadow var(--transition-speed), filter var(--transition-speed);
+  filter: brightness(90%);
 }
 
-.destacados .swiper-slide .libro img {
-  height: 15rem;
-}
-
-.destacados .swiper-slide .libro h3 {
-  font-size: 2rem;
-  color: var(--black);
-  padding: 0.5rem 0;
-}
-
-.destacados .swiper-slide .libro .stars {
-  padding: 0.5rem 0;
-}
-
-.destacados .swiper-slide .libro .stars i {
-  font-size: 1.7rem;
-  color: var(--orange);
-}
-
-.destacados .swiper-slide .libro .price {
-  font-size: 2rem;
-  padding-top: 1rem;
-  color: var(--black);
-}
-
-.articulos .swiper-slide .libro,
-.blogs .swiper-slide .libro {
-  height: auto;
-  padding: 2rem;
-  text-align: center;
-  border: var(--border);
-  box-shadow: var(--box-shadow);
-  background: var(--white);
-  border-radius: 0.5rem;
-  width: 100%;
-}
-
-.articulos .swiper-slide .libro img,
-.blogs .swiper-slide .libro img {
-  height: 15rem;
-}
-
-.articulos .swiper-slide .libro h3,
-.blogs .swiper-slide .libro h3 {
-  font-size: 2rem;
-  color: var(--black);
-  padding: 0.5rem 0;
-}
-
-.articulos .swiper-slide .libro .price,
-.blogs .swiper-slide .libro .price {
-  font-size: 2rem;
-  padding-top: 1rem;
-  color: var(--black);
-}
-
-.footer .box-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-  gap: 3rem;
-}
-
-.footer .box-container .box h3 {
-  font-size: 2.5rem;
-  padding-bottom: 1rem;
-  color: var(--black);
-}
-
-.footer .box-container .box a {
-  display: block;
-  font-size: 1.5rem;
-  padding: 0.5rem 0;
-  color: var(--light-color);
-}
-
-.footer .box-container .box a i {
-  padding-right: 0.5rem;
-  color: var(--orange);
-}
-
-.footer .box-container .box a:hover i {
-  padding-right: 2rem;
-}
-
-.footer .credit {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  font-size: 2rem;
-  color: var(--light-color);
-  border-top: var(--border);
-  text-align: center;
+.image-container img:hover {
+  transform: scale(var(--image-scale));
+  box-shadow: var(--image-shadow-hover);
+  filter: brightness(100%);
 }
