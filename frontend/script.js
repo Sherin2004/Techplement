@@ -98,13 +98,24 @@ initializeSwiper(".reviews-slider", {
   },
 });
 
-// Swiper for blogs
-initializeSwiper(".blogs-slider", {
-  spaceBetween: 10,
+// Swiper for instructor reviews
+var swiper = new Swiper(".instructors-slider", {
+  loop: true,
   grabCursor: true,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
   breakpoints: {
-    0: { slidesPerView: 1 },
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
+    640: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
   },
 });
